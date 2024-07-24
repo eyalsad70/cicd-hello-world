@@ -17,7 +17,3 @@ jobs:
         run: |
           cat hello_world.txt
 
-      - name: my_artifact
-      run: |
-        cat hello_world.txt > test_report.txt
-        echo "All tests passed successfully" >> test_report.txt

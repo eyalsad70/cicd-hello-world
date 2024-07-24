@@ -18,13 +18,13 @@ jobs:
           cat timestamped.txt
 
       - name: Generate my-artifact
-      run: |
-        cat timestamped.txt > my-artifact.txt
-        echo "All tests passed successfully" >> my-artifact.txt
+        run: |
+          cat timestamped.txt > my-artifact.txt
+          echo "All tests passed successfully" >> my-artifact.txt
     
-    - name: Upload my-artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: my-artifact
-        path: my-artifact.txt
+      - name: Upload my-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: my-artifact.txt
 
