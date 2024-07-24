@@ -19,7 +19,7 @@ jobs:
 
       - name: Generate my-artifact
       run: |
-        echo "Test Report" > my-artifact.txt
+        cat timestamped.txt > my-artifact.txt
         echo "All tests passed successfully" >> my-artifact.txt
     
     - name: Upload my-artifact
