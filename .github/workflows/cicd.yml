@@ -1,0 +1,20 @@
+name: Hello_World_CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+    
+jobs:
+  build_test:
+    name: Build and Test Data Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+  - name: Run tests
+      run: |
+        cat hello-world.txt
