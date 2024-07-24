@@ -15,11 +15,11 @@ jobs:
 
       - name: Print Hello World with artifacts
         run: |
-          cat timestamped.txt
+          cat timestamped_hello.txt
 
       - name: Generate my-artifact
         run: |
-          cat timestamped.txt > my-artifact.txt
+          cat timestamped_hello.txt > my-artifact.txt
           echo "All tests passed successfully" >> my-artifact.txt
     
       - name: Upload my-artifact
