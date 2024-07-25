@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build step:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Generate my-artifact
         run: |
-          cat timestamped_hello.txt > my-artifact.txt
+          echo "Hello, CI/CD World! Created at $(date)" > my-artifact.txt
           echo "All tests passed successfully" >> my-artifact.txt
     
       - name: Upload my-artifact
@@ -28,3 +28,20 @@ jobs:
           name: my-artifact
           path: my-artifact.txt
 
+ staging:
+    name: Staging Environment
+    runs-on: ubuntu-latest
+    needs: build_test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+     - name: Download test report
+      uses: actions/download-artifact@v4
+      with:
+        name: test-report
+    
+    - name: Display test report
+      run: cat test_report.txt
+    
