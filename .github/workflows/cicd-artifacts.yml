@@ -39,7 +39,7 @@ jobs:
     - name: Download my-artifact
       uses: actions/download-artifact@v4
       with:
-        name: test-report
+        name: my-artifact
     
     - name: Display my-artifact
       run: cat my-artifact.txt
